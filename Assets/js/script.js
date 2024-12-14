@@ -25,11 +25,11 @@ function validate(regex, element) {
     element.classList.add("is-valid");
     element.classList.remove("is-invalid");
     return true;
-  } else {
-    element.classList.add("is-invalid");
-    element.classList.remove("is-valid");
-    return false;
   }
+
+  element.classList.add("is-invalid");
+  element.classList.remove("is-valid");
+  return false;
 }
 
 //* Functions
