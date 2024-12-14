@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="todolist" />
+    <meta name="author" content="Mina Nadi" />
+    <title>Todolist - by Mina Nadi</title>
+    <link
+      rel="shortcut icon"
+      href="./Assets/imgs/favicon.png"
+      type="image/x-icon"
+    />
+
+    <!--^  => Google Link  -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Racing+Sans+One&display=swap"
+      rel="stylesheet"
+    />
+    <!--^  => BootStrap Links  -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css"
+    />
+    <link rel="stylesheet" href="./Assets/css/bootstrap.min.css" />
+
+    <!--^  => CSS Links  -->
+    <link rel="stylesheet" href="./Assets/css/all.min.css" />
+    <link rel="stylesheet" href="./Assets/css/style.css" />
+  </head>
+  <body>
+    <h1 class="text-center my-5">Registration Form</h1>
+
+    <div class="card w-75 mx-auto p-5">
+      <form>
+        <div class="mb-3">
+          <label for="userName">Contact Name</label>
+          <input
+            type="text"
+            class="form-control"
+            name="userName"
+            id="userName"
+            placeholder="Mina Na ..."
+            oninput="validate(contactNameRegex, userName)"
+          />
+        </div>
+
+        <div class="mb-3">
+          <label for="userPhone">Phone Number</label>
+          <input
+            type="text"
+            class="form-control"
+            name="userPhone"
+            id="userPhone"
+            placeholder="like 012... "
+            oninput="validate(phoneNumberRegex, userPhone)"
+          />
+        </div>
+        <div class="mb-3">
+          <label for="userEmail" class="form-label">Email </label>
+          <input
+            type="email"
+            class="form-control"
+            id="userEmail"
+            placeholder="name@example.com"
+            oninput="validate(emailRegex, userEmail)"
+          />
+        </div>
+        <div class="mb-3">
+          <label for="userAdress" class="form-label">Address</label>
+          <textarea
+            class="form-control"
+            id="userAddress"
+            oninput="validate(addressRegex, userAddress)"
+            rows="3"
+          ></textarea>
+        </div>
+
+        <button class="btn btn-secondary" type="button" onclick="clearForm()">
+          Reset
+        </button>
+        <button
+          type="button"
+          class="btn btn-success my-2"
+          id="addBtn"
+          onclick="addUser()"
+        >
+          Save
+        </button>
+        <button
+          type="button"
+          class="btn btn-info my-2 d-none accordion"
+          id="updateBtn"
+          onclick="updateUser()"
+        >
+          Update
+        </button>
+      </form>
+    </div>
+
+    <p></p>
+    <div class="w-75 mx-auto">
+      <div class="my-3">
+        <input
+          type="text"
+          oninput="searchUsers(this.value)"
+          class="form-control"
+          placeholder="search by name"
+          id="searchInput"
+        />
+      </div>
+
+      <table class="table table-striped">
+        <thead>
+          <th>ID</th>
+          <th>Contact Name</th>
+          <th>Email</th>
+          <th>Phone</th>
+          <th>Address</th>
+          <th>Actions</th>
+        </thead>
+        <tbody id="userContainer"></tbody>
+      </table>
+    </div>
+
+    <!--^  => BootStrap Links  -->
+    <script src="./Assets/js/bootstrap.bundle.min.js"></script>
+    <script src="./Assets/js/script.js"></script>
+  </body>
+</html>
